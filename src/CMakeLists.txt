@@ -1,10 +1,19 @@
-set(BINARY ${CMAKE_PROJECT_NAME})
+cmake_minimum_required(VERSION 3.17)
+project(src)
 
-# add_executable(ExampleProject main.cpp file1.cpp file1.h)
-file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp) #simplification
+set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCES ${SOURCES})
+include_directories(.)
 
-add_executable(${BINARY}_run ${SOURCES})
-
-add_library(${BINARY}_lib STATIC ${SOURCES})
+add_executable(src
+        main.cpp
+        Persona.cpp
+        Persona.h
+        ServicioPersonasConPersistencia.cpp
+        ServicioPersonasConPersistencia.h
+        tinyxml2.cpp
+        tinyxml2.h
+        VectorPersonas.cpp
+        VectorPersonas.h
+        XMLSerialization.cpp
+        XMLSerialization.h)
